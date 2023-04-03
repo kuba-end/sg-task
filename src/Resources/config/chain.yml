@@ -1,0 +1,36 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\Chain\MalfunctionReportChain\MalfunctionReportTypeChain:
+        arguments:
+            - !tagged sg.malfunction_report_type.filter
+
+    App\Chain\MalfunctionReportChain\MalfunctionReportDescribeFilter:
+        tags:
+            - { name: sg.malfunction_report_type.filter }
+
+    App\Chain\MalfunctionReportChain\MalfunctionReportStatusFilter:
+        tags:
+            - { name: sg.malfunction_report_type.filter }
+
+    App\Chain\MalfunctionReportChain\MalfunctionReportDateFilter:
+        tags:
+            - { name: sg.malfunction_report_type.filter }
+
+    App\Chain\InspectionReportChain\InspectionReportTypeChain:
+        arguments:
+            - !tagged sg.inspection_report_type.filter
+
+    App\Chain\InspectionReportChain\InspectionReportDescribeFilter:
+        tags:
+            - { name: sg.inspection_report_type.filter }
+
+    App\Chain\InspectionReportChain\InspectionReportStatusFilter:
+        tags:
+            - { name: sg.inspection_report_type.filter }
+
+    App\Chain\InspectionReportChain\InspectionReportDateFilter:
+        tags:
+            - { name: sg.inspection_report_type.filter }

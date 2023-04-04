@@ -7,9 +7,7 @@ namespace App\Factory;
 use App\Enum\ReportTypeEnum;
 use App\Report\InspectionReport;
 use App\Report\MalfunctionReport;
-use App\Report\Report;
 use App\Report\ReportInterface;
-use DateTime;
 use InvalidArgumentException;
 
 final class SpecificReportFactory implements SpecificReportFactoryInterface

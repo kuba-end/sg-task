@@ -18,7 +18,6 @@ final class MalfunctionReportDescribeFilter
 
         $this->resolvePriority($report, $fuzz, $description);
 
-// GeneralReport Musi mieć pola zarówno jednego jak i drugiego raportu
         return $report;
     }
 

@@ -23,10 +23,6 @@ services:
         arguments:
             - !tagged sg.inspection_report_type.filter
 
-    App\Chain\InspectionReportChain\InspectionReportDescribeFilter:
-        tags:
-            - { name: sg.inspection_report_type.filter }
-
     App\Chain\InspectionReportChain\InspectionReportStatusFilter:
         tags:
             - { name: sg.inspection_report_type.filter }

@@ -1,6 +1,7 @@
 imports:
     - { resource: ../src/Resources/config/chain.yml }
     - { resource: ../src/Resources/config/resolver.yml }
+    - { resource: ../src/Resources/config/converter.yml }
 
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.

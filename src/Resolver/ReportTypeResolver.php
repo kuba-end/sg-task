@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Resolver;
 
 use App\Enum\ReportTypeEnum;
-use App\Factory\ReportInspectionFactory;
-use App\Factory\ReportMalfunctionFactory;
 use App\Factory\SpecificReportFactoryInterface;
 use App\Report\ReportInterface;
 use FuzzyWuzzy\Fuzz;

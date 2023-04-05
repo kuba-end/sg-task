@@ -1,7 +1,9 @@
 # sg-task
 
+### Composer
+Run `composer install`
 ### Command
-For use type `bin/console sg:sort:report recruitment-task-source.json` 
+To use command type `bin/console sg:sort:report recruitment-task-source.json` 
 
 ### Specs
 For run specs type `bin/phpspec run`

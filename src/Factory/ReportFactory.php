@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Factory;
 
-use App\Converter\PhoneConverter;
 use App\Converter\PhoneConverterInterface;
 use App\Report\Report;
 use App\Report\ReportInterface;

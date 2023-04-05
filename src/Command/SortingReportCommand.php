@@ -6,7 +6,6 @@ namespace App\Command;
 
 use App\Chain\InspectionReportChain\InspectionReportTypeChain;
 use App\Chain\MalfunctionReportChain\MalfunctionReportTypeChain;
-use App\Converter\PhoneConverter;
 use App\Factory\ReportFactory;
 use App\Finder\DuplicateFinder;
 use App\Report\InspectionReport;
@@ -17,7 +16,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Messenger\MessageBusInterface;
 
 final class SortingReportCommand extends Command
 {
@@ -32,8 +30,6 @@ final class SortingReportCommand extends Command
 
     private ReportFactory $reportFactory;
 
-    private MessageBusInterface $messageBus;
-
     private MalfunctionReportTypeChain $malfunctionReportTypeChain;
 
     private InspectionReportTypeChain $inspectionReportTypeChain;
@@ -46,7 +42,6 @@ final class SortingReportCommand extends Command
 
     public function __construct(
         ReportFactory $reportFactory,
-        MessageBusInterface $messageBus,
         MalfunctionReportTypeChain $malfunctionReportTypeChain,
         InspectionReportTypeChain $inspectionReportTypeChain,
         ReportTypeResolver $reportTypeResolver,
@@ -55,7 +50,6 @@ final class SortingReportCommand extends Command
     ) {
         parent::__construct();
         $this->reportFactory = $reportFactory;
-        $this->messageBus = $messageBus;
         $this->malfunctionReportTypeChain = $malfunctionReportTypeChain;
         $this->inspectionReportTypeChain = $inspectionReportTypeChain;
         $this->reportTypeResolver = $reportTypeResolver;
@@ -156,7 +150,7 @@ final class SortingReportCommand extends Command
                     count($malfunctionReports),
                     count($duplicatedReports),
         ));
-        // TODO: , zapiać querybusa, dodać logi
+
         return Command::SUCCESS;
     }
 

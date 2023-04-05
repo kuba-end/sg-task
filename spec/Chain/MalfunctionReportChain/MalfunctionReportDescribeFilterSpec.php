@@ -11,7 +11,6 @@ use App\Report\InspectionReport;
 use App\Report\MalfunctionReport;
 use FuzzyWuzzy\Fuzz;
 use PhpSpec\ObjectBehavior;
-use spec\FuzzyWuzzy\FuzzSpec;
 
 final class MalfunctionReportDescribeFilterSpec extends ObjectBehavior
 {

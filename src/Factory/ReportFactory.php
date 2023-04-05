@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Factory;
 
 use App\Converter\PhoneConverter;
+use App\Converter\PhoneConverterInterface;
 use App\Report\Report;
 use App\Report\ReportInterface;
 use DateTime;
@@ -14,11 +15,11 @@ final class ReportFactory implements ReportFactoryInterface
 {
     private LoggerInterface $logger;
 
-    private PhoneConverter $phoneConverter;
+    private PhoneConverterInterface $phoneConverter;
 
     public function __construct(
         LoggerInterface $logger,
-        PhoneConverter $phoneConverter
+        PhoneConverterInterface $phoneConverter
     ) {
         $this->logger = $logger;
         $this->phoneConverter = $phoneConverter;
@@ -33,7 +34,8 @@ final class ReportFactory implements ReportFactoryInterface
         $date = $this->resolveDate($reportData);
 
         $report->setDueDate($date ?? null);
-        $report->setPhone($this->phoneConverter->unifyPhoneNumber($reportData['phone']));
+        $unifiedNumber = $this->phoneConverter->unifyPhoneNumber($reportData);
+        $report->setPhone($unifiedNumber);
 
         return $report;
     }

@@ -7,25 +7,27 @@ namespace App\Report;
 use App\Enum\ReportTypeEnum;
 use DateTime;
 
-final class MalfunctionReport implements ReportInterface
+class MalfunctionReport implements ReportInterface
 {
-    private string $description;
+    private int $id;
 
-    private string $type = ReportTypeEnum::MALFUNCTION_TYPE;
+    public string $description;
 
-    private ?string $priority = null;
+    public string $type = ReportTypeEnum::MALFUNCTION_TYPE;
+
+    public ?string $priority = null;
 
     private ?DateTime $dueDate;
 
-    private string $visitDate;
+    public string $visitDate;
 
-    private string $status;
+    public string $status;
 
-    private ?string $recommendation;
+    public ?string $recommendation = null;
 
-    private ?string $phone;
+    public ?string $phone;
 
-    private ?DateTime $createdAt;
+    public ?DateTime $createdAt = null;
 
 
     public function getId(): int

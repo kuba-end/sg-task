@@ -6,7 +6,7 @@ namespace App\Report;
 
 use DateTime;
 
-final class Report implements ReportInterface
+class Report implements ReportInterface
 {
     private int $id;
 

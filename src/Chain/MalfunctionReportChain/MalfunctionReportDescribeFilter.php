@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Chain\MalfunctionReportChain;
 
+use App\Chain\ReportFilterInterface;
 use App\Enum\ReportPriorityEnum;
 use App\Report\MalfunctionReport;
 use App\Report\ReportInterface;
 use FuzzyWuzzy\Fuzz;
 
-final class MalfunctionReportDescribeFilter
+final class MalfunctionReportDescribeFilter implements ReportFilterInterface
 {
     public function sort(ReportInterface $report): ReportInterface
     {

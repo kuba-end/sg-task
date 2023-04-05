@@ -7,27 +7,27 @@ namespace App\Report;
 use App\Enum\ReportTypeEnum;
 use DateTime;
 
-final class InspectionReport implements ReportInterface
+class InspectionReport implements ReportInterface
 {
     private int $id;
 
-    private string $description;
+    public string $description;
 
-    private string $type = ReportTypeEnum::INSPECTION_TYPE;
+    public string $type = ReportTypeEnum::INSPECTION_TYPE;
 
     private ?DateTime $dueDate;
 
-    private string $inspectionDate;
+    public string $inspectionDate;
 
-    private string $inspectionWeek;
+    public string $inspectionWeek;
 
-    private string $status;
+    public string $status;
 
-    private ?string $recommendation;
+    public ?string $recommendation = null;
 
-    private ?string $phone;
+    public ?string $phone;
 
-    private DateTime $createdAt;
+    public ?DateTime $createdAt = null;
 
     public function getId(): int
     {
